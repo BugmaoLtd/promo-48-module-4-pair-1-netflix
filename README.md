@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ejercicio de Netflix
 
 ## ¿Cuántos ejercicios hemos hecho?
@@ -89,3 +90,11 @@ Por favor marca a continuación los ejercicios que hayáis terminado:
 - [ ] 4. (Des)marca como favoritas las películas de la usuaria
 - [ ] 5. Recupera los datos del perfil de la usuaria
 - [ ] 6. Actualiza el perfil de la usuaria
+=======
+# promo-48-module-4-pair-1-netflix
+
+Crear BD netflix
+Añadir tablas Movies - Users - Actors.
+Crear repo
+Incluir script con código MySQL
+>>>>>>> 8dc4b53c5040d803fd9fa6c35cbe1fdc079ed4ad
