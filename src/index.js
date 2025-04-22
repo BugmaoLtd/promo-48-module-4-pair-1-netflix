@@ -64,7 +64,13 @@ const fakeMovies = [
   },
 ];
 
-server.get("/api/movies", (req, res) => {
+
+server.get("/api/movies", async (req, res) => {
+  const connection = await getDBConnection();
+  const query = "SELECT * FROM movies;";
+  const [moviesResult] = await connection.query(query);
+  console.log(moviesResult);
+  connection.end();
   if (fakeMovies.length === 0) {
     res.status(404).json({
       status: "error",
@@ -72,19 +78,8 @@ server.get("/api/movies", (req, res) => {
     })
   } else {
     res.status(200).json({
-      status: "success",
-      result: fakeMovies
-    })
+      succes: true,
+      result: moviesResult
+    });
   }
-})
-server.get("/api/movies", async (req, res) => {
-  const connection = await getDBConnection();
-  const query = "SELECT * FROM movies;";
-  const [moviesResult] = await connection.query(query);
-  console.log(moviesResult);
-  connection.end();
-  res.status(200).json({
-    succes: true,
-    result: moviesResult
-  });
 })
