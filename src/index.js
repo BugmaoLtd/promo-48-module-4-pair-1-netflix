@@ -26,10 +26,13 @@ server.use(express.json());
 
 async function getDBConnection() {
   const connection = await mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
+    host: 'http://mysql-94f360f-loreto0105-57e4.f.aivencloud.com/',
+    user: 'avnadmin',
     database: 'netflix',
-    password: '0000',
+    password: '', //Preguntar a Ana
+    port: '18306'
+    /*mysql-94f360f-loreto0105-57e4.f.aivencloud.com
+18306  avnadmin*/
   })
   connection.connect();
   return connection;
